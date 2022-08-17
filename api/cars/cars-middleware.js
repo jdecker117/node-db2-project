@@ -18,16 +18,16 @@ const checkCarId = (req, res, next) => {
 
 const checkCarPayload = (req, res, next) => {
   if(req.body.vin == null){
-      res.status(400).json({message: `${req.body.vin} is missing`})
+      res.status(400).json({message: `vin is missing`})
      }
   else if(req.body.make == null){
-    res.status(400).json({message: `${req.body.make} is missing`})
+    res.status(400).json({message: `make is missing`})
   }
   else if(req.body.model == null){
-    res.status(400).json({message: `${req.body.model} is missing`})
+    res.status(400).json({message: `model is missing`})
   }
   else if(req.body.mileage == null){
-    res.status(400).json({message: `${req.body.mileage} is missing`})
+    res.status(400).json({message: `mileage is missing`})
   }
   else{
     next()

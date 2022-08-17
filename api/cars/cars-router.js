@@ -13,12 +13,12 @@ router.get('/:id', checkCarId, (req, res) => {
     res.json(req.car)
 })
 
-router.post('/', checkCarId, checkCarPayload, checkVinNumberValid, checkVinNumberUnique, 
-(req, res) => {
-   Cars.create(req.body)
-   .then(result => {
-    console.log(result)
-   }) 
+router.post ('/', checkCarPayload, checkVinNumberValid, checkVinNumberUnique,
+async (req, res) => {
+    Cars.create(req.body)
+    .then(result => {
+        res.status(201).json(result)
+    })
 })
 
 module.exports = router
